@@ -16,7 +16,11 @@ angular.module('shortly', [
       controller: 'AuthController'
     })
     // Your code here
-
+    // copy another .when but change the url and have the template point to our html
+    .when('/', {
+      templateUrl: 'app/links/links.html',
+      controller: 'LinksController'
+    })
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls
     $httpProvider.interceptors.push('AttachTokens');

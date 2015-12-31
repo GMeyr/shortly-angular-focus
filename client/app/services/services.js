@@ -2,6 +2,23 @@ angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
   // Your code here
+  // gabe: I guess this is where we attach all the methods we are going
+  //     to need to handling links
+
+  // matt: first test says we need a get method
+  //       maybe it does a get request to server and gets link data back?
+  var getLinks = function(){
+    return $http({
+      method: "GET",
+      url: '/',
+    })
+    .then(function(resp){
+      return resp.data;
+    });
+  }
+  return {
+    getLinks: getLinks
+  }
 })
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
