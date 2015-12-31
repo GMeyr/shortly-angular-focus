@@ -7,6 +7,18 @@ angular.module('shortly.services', [])
 
   // matt: first test says we need a get method
   //       maybe it does a get request to server and gets link data back?
+
+  var addLink = function(url) {
+    return $http({
+      method: 'POST',
+      url: '/api/links',
+      data: url
+    })
+    .then(function (resp) {
+      return resp.data;
+    });
+  }
+
   var getLinks = function(){
     return $http({
       method: "GET",
@@ -17,8 +29,10 @@ angular.module('shortly.services', [])
     });
   }
   return {
-    getLinks: getLinks
-  }
+    getLinks: getLinks,
+    addLink: addLink
+  };
+
 })
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!

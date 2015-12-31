@@ -1,7 +1,12 @@
 <div id='container'>
-<!-- Your code here -->
-<p>This is the Shorten page</p>
-<input type="url" name="input">
+  <!-- Your code here -->
+  <p>This is the Shorten page</p>
+  <form name="urlForm" ng-submit="addLink(urlForm.$valid)" novalidate>
+
+    <input type="url" name="input" ng-model="url">
+    <button type="submit">Submit</button>
+
+  </form>
 </div>
 
 
