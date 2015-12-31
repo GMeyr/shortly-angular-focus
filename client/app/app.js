@@ -17,7 +17,7 @@ angular.module('shortly', [
     })
     // Your code here
     // copy another .when but change the url and have the template point to our html
-    .when('/', {
+    .when('/links', {
       templateUrl: 'app/links/links.html',
       controller: 'LinksController'
     })
