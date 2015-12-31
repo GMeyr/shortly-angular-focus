@@ -5,12 +5,13 @@ angular.module('shortly.shorten', [])
   // gabe: $location lets us access information about the url
   //       here we use methods from our links object to shorten the links
   //       and I assume the link comes in as a param in the url
+  $scope.link = {}
+  $scope.link.url = 'http://www.google.com';
 
-  $scope.url = 'http://www.google.com';
 
   $scope.addLink = function(isValid) {
     if (isValid) {
-      Links.addLink({url: $scope.url});
+      Links.addLink($scope.link);
     }
   };
 
